@@ -1,0 +1,42 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Navbar from '../components/Navbar.astro';
+import Footer from '../components/Footer.astro';
+---
+
+<Layout>
+  <Navbar />
+  <main class="px-6 md:px-12 mb-16">
+    <section class="mb-16 md:mb-24">
+      <h1 class="text-4xl md:text-7xl font-medium text-gray-900 mb-12">The Studio Behind The Work</h1>
+      <div class="bg-gray-100 rounded-2xl flex items-center justify-center py-16 md:py-24 mb-12">
+        <span class="text-5xl md:text-9xl font-medium tracking-widest text-gray-900">AENEA</span>
+      </div>
+      <div class="max-w-2xl space-y-4 text-base md:text-lg text-gray-500 leading-relaxed">
+        <p>Aenea was built on the belief that great design is never just visual. It is structural. It is strategic. It is the result of paying attention to things most people overlook. I started this studio because I wanted to work differently — closely, carefully, and only on projects I could fully commit to. Not a production line. A practice.</p>
+        <p>The name Aenea carries a sense of purpose and permanence. That's intentional. Everything we create is designed to hold — across time, across touchpoints, across contexts.</p>
+      </div>
+    </section>
+    <hr class="border-gray-200 mb-16" />
+    <section class="mb-16 md:mb-24">
+      <h2 class="text-3xl md:text-5xl font-medium text-gray-900 mb-8">Who I Work With</h2>
+      <div class="max-w-2xl space-y-4 text-base md:text-lg text-gray-500 leading-relaxed">
+        <p>Aenea works with architecture studios, hotels, restaurants, jewellery brands, and beauty spaces — businesses where design is already part of the offer, not an afterthought.</p>
+        <p>I work with a small number of clients at a time. That's a deliberate choice. It means every project receives full attention, honest thinking, and work that I would put my name on — because I do.</p>
+      </div>
+    </section>
+    <section class="mb-16 border-l-2 border-gray-900 pl-6 md:pl-8">
+      <blockquote class="text-2xl md:text-4xl font-medium text-gray-900 leading-snug">
+        "I'm Not Interested In Design That Simply Looks Good. I'm Interested In Design That Works — And That Still Looks Good Five Years From Now."
+      </blockquote>
+    </section>
+    <section class="mb-8">
+      <h2 class="text-3xl md:text-5xl font-medium text-gray-900 mb-4">Let's Build Something Worth Keeping</h2>
+      <p class="text-base md:text-lg text-gray-500 mb-8">If you're working on a brand, a website, or a visual system that deserves real attention — I'd like to hear about it.</p>
+      <a href="/contact" class="inline-flex items-center gap-2 px-6 py-3 bg-gray-900 text-white rounded-3xl hover:shadow-lg transition-all duration-150">
+        Start a conversation <span>↗</span>
+      </a>
+    </section>
+  </main>
+  <Footer />
+</Layout>

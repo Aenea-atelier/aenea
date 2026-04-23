@@ -1,0 +1,93 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import Navbar from '../../components/Navbar.astro';
+import Footer from '../../components/Footer.astro';
+import GalleryLightbox from '../../components/GalleryLightbox.astro';
+---
+
+<Layout title="AI-Generated Brand Imagery — Aenea">
+  <Navbar />
+  
+  <section class="px-6 md:px-12 py-16 md:py-24">
+    <div class="mb-8">
+      <h1 class="text-4xl md:text-5xl font-medium text-gray-900 mb-2">AI-Generated Brand Imagery</h1>
+      <div class="flex gap-6 text-xs md:text-sm text-gray-600">
+        <span><strong>Service:</strong> Visual Exploration</span>
+        <span><strong>Year:</strong> 2025</span>
+      </div>
+    </div>
+
+    {/* Hero + Gallery Grid */}
+    <div class="flex gap-4 mb-12 items-start">
+      {/* Left: Large hero image */}
+      <div class="w-1/2">
+        <button data-lightbox class="w-full overflow-hidden rounded-lg bg-gray-100 cursor-pointer border-none p-0 h-160">
+          <img src="/ai-imagery-hero.jpg" alt="AI-Generated Brand Imagery" class="w-full h-full object-cover hover:scale-105 transition-transform duration-300" />
+        </button>
+      </div>
+
+      {/* Right: 2x2 Grid */}
+      <div class="w-1/2 grid grid-cols-2 gap-2">
+        <button data-lightbox class="overflow-hidden rounded-lg bg-gray-100 cursor-pointer border-none p-0 aspect-square">
+          <img src="/ai-imagery-1.jpg" alt="AI Imagery - 1" class="w-full h-full object-cover hover:scale-105 transition-transform duration-300" />
+        </button>
+        
+        <button data-lightbox class="overflow-hidden rounded-lg bg-gray-100 cursor-pointer border-none p-0 aspect-square">
+          <img src="/ai-imagery-2.jpg" alt="AI Imagery - 2" class="w-full h-full object-cover hover:scale-105 transition-transform duration-300" />
+        </button>
+        
+        <button data-lightbox class="overflow-hidden rounded-lg bg-gray-100 cursor-pointer border-none p-0 aspect-square">
+          <img src="/ai-imagery-3.jpg" alt="AI Imagery - 3" class="w-full h-full object-cover hover:scale-105 transition-transform duration-300" />
+        </button>
+        
+        <button data-lightbox class="overflow-hidden rounded-lg bg-gray-100 cursor-pointer border-none p-0 aspect-square">
+          <img src="/ai-imagery-4.jpg" alt="AI Imagery - 4" class="w-full h-full object-cover hover:scale-105 transition-transform duration-300" />
+        </button>
+      </div>
+    </div>
+
+    {/* Copy Link */}
+    <div class="mb-12">
+      <button id="copy-link-btn" class="flex items-center gap-2 px-4 py-2 border border-gray-900 rounded-full text-sm hover:bg-gray-50 transition-colors cursor-pointer">
+        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13.828 10.172a4 4 0 00-5.656 0l-4 4a4 4 0 105.656 5.656l1.102-1.101m-.758-4.899a4 4 0 005.658 0l4-4a4 4 0 00-5.656-5.656l-1.1 1.1" />
+        </svg>
+        <span>Copy Link</span>
+      </button>
+    </div>
+
+    {/* Description */}
+    <div>
+      <p class="text-sm md:text-base text-gray-700 mb-4 leading-relaxed">
+        AI-generated imagery approached as a creative tool, not a shortcut.
+      </p>
+      
+      <p class="text-sm md:text-base text-gray-700 mb-4 leading-relaxed">
+        Used in the early stages of brand development, it allows us to explore atmosphere, material, and mood before committing to a visual direction. It is a space for experimentation - testing what a brand could feel like before defining what it will look like.
+      </p>
+      
+      <p class="text-sm md:text-base text-gray-700 mb-4 leading-relaxed">
+        Each image begins with a brief and ends with intention. Prompting, selection, and refinement shape visuals that feel considered rather than generated. The result is imagery that supports brand storytelling and expands the visual world of a project - plausible, elevated, and on-brand.
+      </p>
+      
+      <p class="text-sm md:text-base text-gray-700 leading-relaxed">
+        Technology in service of craft. Not the other way around.
+      </p>
+    </div>
+  </section>
+
+  <Footer />
+  <GalleryLightbox />
+</Layout>
+
+<script>
+  document.getElementById('copy-link-btn').addEventListener('click', () => {
+    navigator.clipboard.writeText(window.location.href);
+    const btn = document.getElementById('copy-link-btn');
+    const originalHTML = btn.innerHTML;
+    btn.innerHTML = '<svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41L9 16.17z"/></svg><span>Copied!</span>';
+    setTimeout(() => {
+      btn.innerHTML = originalHTML;
+    }, 2000);
+  });
+</script>

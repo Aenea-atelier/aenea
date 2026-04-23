@@ -1,0 +1,90 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import Navbar from '../../components/Navbar.astro';
+import Footer from '../../components/Footer.astro';
+import GalleryLightbox from '../../components/GalleryLightbox.astro';
+---
+
+<Layout title="Atelier B Brand Design — Aenea">
+  <Navbar />
+  
+  <section class="px-6 md:px-12 py-16 md:py-24">
+    <div class="mb-8">
+      <h1 class="text-4xl md:text-5xl font-medium text-gray-900 mb-2">Atelier B Brand Design</h1>
+      <div class="flex gap-6 text-xs md:text-sm text-gray-600">
+        <span><strong>Service:</strong> Brand Identity</span>
+        <span><strong>Year:</strong> 2025</span>
+      </div>
+    </div>
+
+    {/* Hero Image */}
+    <div class="mb-12">
+      <button data-lightbox class="w-full overflow-hidden rounded-lg bg-gray-100 cursor-pointer border-none p-0 h-80">
+        <img src="/atelier-b-hero.jpg" alt="Atelier B Brand Design" class="w-full h-full object-cover hover:scale-105 transition-transform duration-300" style="object-position: center 30%;" />
+      </button>
+    </div>
+
+    {/* Gallery - 4 boxes in one row */}
+    <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-4 mb-12">
+      <button data-lightbox class="overflow-hidden rounded-lg bg-gray-100 cursor-pointer border-none p-0 aspect-square">
+        <img src="/atelier-b-1.jpg" alt="Atelier B - 1" class="w-full h-full object-cover hover:scale-105 transition-transform duration-300" />
+      </button>
+      
+      <button data-lightbox class="overflow-hidden rounded-lg bg-gray-100 cursor-pointer border-none p-0 aspect-square">
+        <img src="/atelier-b-2.jpg" alt="Atelier B - 2" class="w-full h-full object-cover hover:scale-105 transition-transform duration-300" />
+      </button>
+      
+      <button data-lightbox class="overflow-hidden rounded-lg bg-gray-100 cursor-pointer border-none p-0 aspect-square">
+        <img src="/atelier-b-3.jpg" alt="Atelier B - 3" class="w-full h-full object-cover hover:scale-105 transition-transform duration-300" />
+      </button>
+      
+      <button data-lightbox class="overflow-hidden rounded-lg bg-gray-100 cursor-pointer border-none p-0 aspect-square">
+        <img src="/atelier-b-4.jpg" alt="Atelier B - 4" class="w-full h-full object-cover hover:scale-105 transition-transform duration-300" />
+      </button>
+    </div>
+
+    {/* Copy Link */}
+    <div class="mb-12">
+      <button id="copy-link-btn" class="flex items-center gap-2 px-4 py-2 border border-gray-900 rounded-full text-sm hover:bg-gray-50 transition-colors cursor-pointer">
+        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13.828 10.172a4 4 0 00-5.656 0l-4 4a4 4 0 105.656 5.656l1.102-1.101m-.758-4.899a4 4 0 005.658 0l4-4a4 4 0 00-5.656-5.656l-1.1 1.1" />
+        </svg>
+        <span>Copy Link</span>
+      </button>
+    </div>
+
+    {/* Description */}
+    <div>
+      <p class="text-sm md:text-base text-gray-700 mb-4 leading-relaxed">
+        Atelier B is conceived as a contemporary design studio where space, proportion, and restraint take centre stage. A place where ideas are refined, stripped back, and shaped with intent.
+      </p>
+      
+      <p class="text-sm md:text-base text-gray-700 mb-4 leading-relaxed">
+        No ornament for ornament's sake - every element exists for a reason. Typography carries quiet authority. Clean, confident, and deliberate, it communicates permanence without leaning on nostalgia. Subtle refinements in spacing and form give the identity its edge - fresh and contemporary, unmistakably high - end.
+      </p>
+      
+      <p class="text-sm md:text-base text-gray-700 mb-4 leading-relaxed">
+        The colour palette is designed to live effortlessly across digital and physical environments. Muted neutrals and refined tones allow the brand to adapt without losing character - whether on a website, project documentation, or studio signage.
+      </p>
+      
+      <p class="text-sm md:text-base text-gray-700 leading-relaxed">
+        Atelier B earns attention through balance, discipline, and detail. The identity acts as a framework - allowing the work itself to breathe, while maintaining a strong, cohesive presence.
+      </p>
+    </div>
+  </section>
+
+  <Footer />
+  <GalleryLightbox />
+</Layout>
+
+<script>
+  document.getElementById('copy-link-btn').addEventListener('click', () => {
+    navigator.clipboard.writeText(window.location.href);
+    const btn = document.getElementById('copy-link-btn');
+    const originalHTML = btn.innerHTML;
+    btn.innerHTML = '<svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41L9 16.17z"/></svg><span>Copied!</span>';
+    setTimeout(() => {
+      btn.innerHTML = originalHTML;
+    }, 2000);
+  });
+</script>

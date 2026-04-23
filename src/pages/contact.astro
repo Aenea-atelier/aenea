@@ -1,0 +1,35 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Navbar from '../components/Navbar.astro';
+import Footer from '../components/Footer.astro';
+---
+
+<Layout>
+  <Navbar />
+  <main class="px-6 md:px-12 mb-16">
+    <div class="mb-16 md:mb-24 max-w-xl">
+      <h1 class="text-4xl md:text-6xl font-medium text-gray-900 mb-4">Say Hi.</h1>
+      <p class="text-lg text-gray-500">Tell me about what you're building. I'll get back to you within 48 hours.</p>
+    </div>
+    <form name="contact-form" method="POST" data-netlify="true" class="max-w-2xl space-y-12">
+      <input type="hidden" name="form-name" value="contact-form" />
+      <div>
+        <label for="name" class="text-sm text-gray-500 mb-2 block">Name</label>
+        <input class="border-b border-gray-300 w-full focus:outline-none focus:border-gray-900 p-2 transition-colors bg-transparent" id="name" name="name" type="text" required />
+      </div>
+      <div>
+        <label for="email" class="text-sm text-gray-500 mb-2 block">Email</label>
+        <input class="border-b border-gray-300 w-full focus:outline-none focus:border-gray-900 p-2 transition-colors bg-transparent" id="email" name="email" type="email" required />
+      </div>
+      <div>
+        <label for="message" class="text-sm text-gray-500 mb-2 block">Message</label>
+        <textarea class="w-full p-2 border-b border-gray-300 focus:outline-none focus:border-gray-900 h-40 transition-colors bg-transparent" name="message" id="message" placeholder="What are you working on?" required></textarea>
+      </div>
+      <div class="flex justify-between items-center">
+        <p class="text-xs text-gray-400 max-w-xs">By providing your information, you agree to receive updates from us.</p>
+        <button type="submit" class="bg-gray-900 text-white rounded-full px-6 py-3 hover:bg-gray-700 transition">Submit ↗</button>
+      </div>
+    </form>
+  </main>
+  <Footer />
+</Layout>

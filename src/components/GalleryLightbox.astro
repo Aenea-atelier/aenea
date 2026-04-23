@@ -1,0 +1,64 @@
+<script>
+  let currentImageIndex = 0;
+  let allImages: HTMLImageElement[] = [];
+
+  document.addEventListener('click', (e) => {
+    const galleryLink = e.target.closest('[data-lightbox]');
+    if (!galleryLink) return;
+
+    const img = galleryLink.querySelector('img');
+    const src = img.src;
+    const modal = document.getElementById('lightbox-modal');
+    const modalImg = document.getElementById('lightbox-img');
+    
+    allImages = Array.from(document.querySelectorAll('[data-lightbox] img')).map(el => el as HTMLImageElement);
+    currentImageIndex = allImages.findIndex(img => img.src === src);
+    
+    modalImg.src = src;
+    modal.classList.remove('hidden');
+    document.body.style.overflow = 'hidden';
+  });
+
+  // Keyboard navigation
+  document.addEventListener('keydown', (e) => {
+    const modal = document.getElementById('lightbox-modal');
+    if (modal.classList.contains('hidden')) return;
+
+    if (e.key === 'ArrowRight') {
+      e.preventDefault();
+      currentImageIndex = (currentImageIndex + 1) % allImages.length;
+      document.getElementById('lightbox-img').src = allImages[currentImageIndex].src;
+    } else if (e.key === 'ArrowLeft') {
+      e.preventDefault();
+      currentImageIndex = (currentImageIndex - 1 + allImages.length) % allImages.length;
+      document.getElementById('lightbox-img').src = allImages[currentImageIndex].src;
+    } else if (e.key === 'Escape') {
+      e.preventDefault();
+      modal.classList.add('hidden');
+      document.body.style.overflow = 'auto';
+    }
+  });
+
+  document.getElementById('lightbox-close').addEventListener('click', () => {
+    const modal = document.getElementById('lightbox-modal');
+    modal.classList.add('hidden');
+    document.body.style.overflow = 'auto';
+  });
+
+  document.getElementById('lightbox-modal').addEventListener('click', (e) => {
+    if (e.target.id === 'lightbox-modal') {
+      e.target.classList.add('hidden');
+      document.body.style.overflow = 'auto';
+    }
+  });
+</script>
+
+<div id="lightbox-modal" class="hidden fixed inset-0 bg-black bg-opacity-90 flex items-center justify-center z-50 p-4">
+  <button id="lightbox-close" class="absolute top-6 right-6 text-white hover:text-gray-300 transition-colors z-10">
+    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+    </svg>
+  </button>
+  <img id="lightbox-img" src="" alt="Enlarged view" class="max-w-4xl max-h-[90vh] object-contain rounded-lg" />
+  <p class="absolute bottom-6 left-1/2 -translate-x-1/2 text-white text-xs">← Left / Right → | Press ESC to close</p>
+</div>

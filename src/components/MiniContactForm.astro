@@ -1,0 +1,39 @@
+<section class="px-6 md:px-12 mb-16 md:mb-24">
+  <h2 class="text-4xl md:text-5xl font-medium text-gray-900 mb-6">Start a conversation</h2>
+  <p class="text-lg text-gray-600 mb-12">Tell me about your project. I'll get back to you within 48 hours.</p>
+
+  <div class="bg-gray-50 p-12 md:p-16 rounded-lg">
+    <form class="grid grid-cols-1 md:grid-cols-2 gap-12">
+      {/* Lijevo: Name i Email */}
+      <div class="flex flex-col gap-12">
+        <div>
+          <label class="block text-sm font-medium text-gray-900 mb-4">Name *</label>
+          <input type="text" class="w-full border-b border-gray-900 pb-2 bg-transparent text-gray-900 focus:outline-none transition-colors" required />
+        </div>
+        
+        <div>
+          <label class="block text-sm font-medium text-gray-900 mb-4">Email *</label>
+          <input type="email" class="w-full border-b border-gray-900 pb-2 bg-transparent text-gray-900 focus:outline-none transition-colors" required />
+        </div>
+      </div>
+
+      {/* Desno: Message */}
+      <div>
+        <label class="block text-sm font-medium text-gray-900 mb-4">Message *</label>
+        <textarea placeholder="Tell me more about your project" class="w-full border-b border-gray-900 pb-2 bg-transparent text-gray-900 placeholder-gray-400 focus:outline-none transition-colors resize-none" rows="6" required></textarea>
+      </div>
+
+      {/* Donje lijevo: Text */}
+      <div class="md:col-span-1">
+        <p class="text-xs text-gray-500">By providing your information, you agree to receive updates and promotions from Aenea.</p>
+      </div>
+
+      {/* Donje desno: Submit */}
+      <div class="md:col-span-1 flex justify-end items-end">
+        <button type="submit" class="px-6 py-2 bg-gray-900 text-white rounded-full flex items-center gap-2 hover:bg-gray-800 transition-all duration-150 text-sm font-medium">
+          Submit <span>↗</span>
+        </button>
+      </div>
+    </form>
+  </div>
+</section>
