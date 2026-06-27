@@ -3,88 +3,77 @@ import Layout from '../../layouts/Layout.astro';
 import Navbar from '../../components/Navbar.astro';
 import Footer from '../../components/Footer.astro';
 import GalleryLightbox from '../../components/GalleryLightbox.astro';
+
+const title = "Ceramo — Logo Design for a Ceramic Studio | Aenea";
+const description = "Ceramo is a logo and identity by Aenea for a ceramic studio — a mark rooted in material honesty and quiet craftsmanship, balancing softness and structure.";
 ---
 
-<Layout title="Ceramo Studio Logo Design — Aenea">
-  <Navbar />
-  
-  <section class="px-6 md:px-12 py-16 md:py-24">
-    <div class="mb-8">
-      <h1 class="text-4xl md:text-5xl font-medium text-gray-900 mb-2">Ceramo Studio Logo Design</h1>
-      <div class="flex gap-6 text-xs md:text-sm text-gray-600">
-        <span><strong>Service:</strong> Logo Design</span>
-        <span><strong>Year:</strong> 2025</span>
+<Layout title={title} description={description}>
+  <Navbar current="work" />
+
+  <main>
+    <section class="proj-intro wrap">
+      <a href="/work" class="back-link"><span aria-hidden="true">←</span> Selected Work</a>
+      <span class="eyebrow proj-cat">Logo Design</span>
+      <h1 class="proj-title">Ceramo</h1>
+      <p class="proj-lead">A logo and identity for a ceramic studio — rooted in material honesty and quiet craftsmanship, balancing softness and structure to reflect the dialogue between hand and form.</p>
+      <div class="proj-meta">
+        <div><div class="meta-k">Service</div><div class="meta-v">Logo Design</div></div>
+        <div><div class="meta-k">Sector</div><div class="meta-v">Craft &amp; Ceramics</div></div>
+        <div><div class="meta-k">Year</div><div class="meta-v">2025</div></div>
+        <div><div class="meta-k">Deliverables</div><div class="meta-v">Logotype, Identity, Applications</div></div>
       </div>
-    </div>
+    </section>
 
-    {/* Hero Image */}
-    <div class="mb-12">
-      <button data-lightbox class="w-full overflow-hidden rounded-lg bg-gray-100 cursor-pointer border-none p-0 h-80">
-        <img src="/ceramo-hero.jpg" alt="Ceramo Studio Logo Design" class="w-full h-full object-cover hover:scale-105 transition-transform duration-300" style="object-position: center 50%;" />
-      </button>
-    </div>
+    <figure class="bleed" data-lightbox>
+      <img src="/ceramo-hero.jpg" alt="Ceramo logo design — brand identity for a ceramic studio, by Aenea" />
+    </figure>
 
-    {/* Gallery - 4 boxes in one row */}
-    <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-4 mb-12">
-      <button data-lightbox class="overflow-hidden rounded-lg bg-gray-100 cursor-pointer border-none p-0 aspect-square">
-        <img src="/ceramo-1.jpg" alt="Ceramo - 1" class="w-full h-full object-cover hover:scale-105 transition-transform duration-300" />
-      </button>
-      
-      <button data-lightbox class="overflow-hidden rounded-lg bg-gray-100 cursor-pointer border-none p-0 aspect-square">
-        <img src="/ceramo-2.jpg" alt="Ceramo - 2" class="w-full h-full object-cover hover:scale-105 transition-transform duration-300" />
-      </button>
-      
-      <button data-lightbox class="overflow-hidden rounded-lg bg-gray-100 cursor-pointer border-none p-0 aspect-square">
-        <img src="/ceramo-3.jpg" alt="Ceramo - 3" class="w-full h-full object-cover hover:scale-105 transition-transform duration-300" />
-      </button>
-      
-      <button data-lightbox class="overflow-hidden rounded-lg bg-gray-100 cursor-pointer border-none p-0 aspect-square">
-        <img src="/ceramo-4.jpg" alt="Ceramo - 4" class="w-full h-full object-cover hover:scale-105 transition-transform duration-300" />
-      </button>
-    </div>
+    <section class="case wrap">
+      <div class="case-label"><span class="idx">01</span><span class="eyebrow">Overview</span></div>
+      <div class="case-body">
+        <p>The logo design for Ceramo Studio is rooted in material honesty and quiet craftsmanship. Inspired by the tactile nature of clay and the discipline of ceramic making, the mark balances softness and structure — reflecting the dialogue between hand and form.</p>
+      </div>
+    </section>
 
-    {/* Copy Link */}
-    <div class="mb-12">
-      <button id="copy-link-btn" class="flex items-center gap-2 px-4 py-2 border border-gray-900 rounded-full text-sm hover:bg-gray-50 transition-colors cursor-pointer">
-        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13.828 10.172a4 4 0 00-5.656 0l-4 4a4 4 0 105.656 5.656l1.102-1.101m-.758-4.899a4 4 0 005.658 0l4-4a4 4 0 00-5.656-5.656l-1.1 1.1" />
-        </svg>
-        <span>Copy Link</span>
-      </button>
-    </div>
+    <section class="wrap">
+      <div class="pair">
+        <figure class="ph s7 r43" data-lightbox><img src="/ceramo-1.jpg" alt="Ceramo logotype — ceramic studio logo by Aenea" /></figure>
+        <figure class="ph s5 r45" data-lightbox><img src="/ceramo-2.jpg" alt="Ceramo mark construction and form detail" /></figure>
+      </div>
+    </section>
 
-    {/* Description */}
-    <div>
-      <p class="text-sm md:text-base text-gray-700 mb-4 leading-relaxed">
-        The logo design for Ceramo Studio is rooted in material honesty and quiet craftsmanship. Inspired by the tactile nature of clay and the discipline of ceramic making, the mark balances softness and structure - reflecting the dialogue between hand and form.
-      </p>
-      
-      <p class="text-sm md:text-base text-gray-700 mb-4 leading-relaxed">
-        Construction is minimal and deliberate. Subtle curves echo the organic imperfections of ceramics, while the overall geometry stays controlled and precise. The contrast creates a visual language that feels grounded, refined, and unhurried.
-      </p>
-      
-      <p class="text-sm md:text-base text-gray-700 mb-4 leading-relaxed">
-        Typography is understated. It allows texture and proportion to carry the identity - no excess, only intention. The logo holds across physical and digital applications equally: studio signage, packaging, stamps, documentation.
-      </p>
-      
-      <p class="text-sm md:text-base text-gray-700 leading-relaxed">
-        It doesn't seek attention. It earns it - through balance, restraint, and material awareness. Designed to be felt as much as it is seen.
-      </p>
-    </div>
-  </section>
+    <section class="case wrap">
+      <div class="case-label"><span class="idx">02</span><span class="eyebrow">The Identity</span></div>
+      <div class="case-body">
+        <p>Construction is minimal and deliberate. Subtle curves echo the organic imperfections of ceramics, while the overall geometry stays controlled and precise. The contrast creates a visual language that feels grounded, refined, and unhurried.</p>
+        <p>Typography is understated — it lets texture and proportion carry the identity, no excess, only intention. The logo holds across physical and digital applications equally: studio signage, packaging, stamps, and documentation.</p>
+      </div>
+    </section>
+
+    <section class="wrap">
+      <div class="pair">
+        <figure class="ph s5 r45" data-lightbox><img src="/ceramo-3.jpg" alt="Ceramo identity on packaging and stamps" /></figure>
+        <figure class="ph s7 r43" data-lightbox><img src="/ceramo-4.jpg" alt="Ceramo logo across studio signage and documentation" /></figure>
+      </div>
+    </section>
+
+    <section class="case wrap">
+      <div class="case-label"><span class="idx">03</span><span class="eyebrow">Outcome</span></div>
+      <div class="case-body">
+        <p>It doesn&rsquo;t seek attention — it earns it, through balance, restraint, and material awareness. An identity designed to be felt as much as it is seen.</p>
+      </div>
+    </section>
+
+    <section class="next wrap">
+      <a href="/work/conture" class="next-link">
+        <span class="next-k">Next project</span>
+        <span class="next-title">Conture <span class="arr" aria-hidden="true">↗</span></span>
+        <span class="next-cat">Brand Identity</span>
+      </a>
+    </section>
+  </main>
 
   <Footer />
   <GalleryLightbox />
 </Layout>
-
-<script>
-  document.getElementById('copy-link-btn').addEventListener('click', () => {
-    navigator.clipboard.writeText(window.location.href);
-    const btn = document.getElementById('copy-link-btn');
-    const originalHTML = btn.innerHTML;
-    btn.innerHTML = '<svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41L9 16.17z"/></svg><span>Copied!</span>';
-    setTimeout(() => {
-      btn.innerHTML = originalHTML;
-    }, 2000);
-  });
-</script>

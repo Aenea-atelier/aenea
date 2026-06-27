@@ -3,73 +3,66 @@ import Layout from '../../layouts/Layout.astro';
 import Navbar from '../../components/Navbar.astro';
 import Footer from '../../components/Footer.astro';
 import GalleryLightbox from '../../components/GalleryLightbox.astro';
+
+const title = "Éclat — Web Design for a High-End Jewellery Boutique | Aenea";
+const description = "Éclat is a web design by Aenea for a high-end jewellery boutique — a digital extension of luxury, composed with restraint, editorial typography, and curated visuals.";
 ---
 
-<Layout title="Éclat Studio Web Page Design — Aenea">
-  <Navbar />
-  
-  <section class="px-6 md:px-12 py-16 md:py-24">
-    <div class="mb-8">
-      <h1 class="text-4xl md:text-5xl font-medium text-gray-900 mb-2">Éclat Studio Web Page Design</h1>
-      <div class="flex gap-6 text-xs md:text-sm text-gray-600">
-        <span><strong>Service:</strong> Web Design</span>
-        <span><strong>Year:</strong> 2025</span>
+<Layout title={title} description={description}>
+  <Navbar current="work" />
+
+  <main>
+    <section class="proj-intro wrap">
+      <a href="/work" class="back-link"><span aria-hidden="true">←</span> Selected Work</a>
+      <span class="eyebrow proj-cat">Web Design</span>
+      <h1 class="proj-title">Éclat</h1>
+      <p class="proj-lead">A website for a high-end jewellery boutique — conceived as a digital extension of luxury, where space, typography, and imagery carry the narrative with quiet confidence.</p>
+      <div class="proj-meta">
+        <div><div class="meta-k">Service</div><div class="meta-v">Web Design</div></div>
+        <div><div class="meta-k">Sector</div><div class="meta-v">Luxury &amp; Retail</div></div>
+        <div><div class="meta-k">Year</div><div class="meta-v">2025</div></div>
+        <div><div class="meta-k">Deliverables</div><div class="meta-v">Web design, Art direction, UI</div></div>
       </div>
-    </div>
+    </section>
 
-    {/* Two Images Side by Side */}
-    <div class="grid grid-cols-2 gap-6 mb-12">
-      <button data-lightbox class="overflow-hidden rounded-lg bg-gray-100 cursor-pointer border-none p-0 aspect-square">
-        <img src="/eclat-1.jpg" alt="Eclat - 1" class="w-full h-full object-cover hover:scale-105 transition-transform duration-300" />
-      </button>
-      
-      <button data-lightbox class="overflow-hidden rounded-lg bg-gray-100 cursor-pointer border-none p-0 aspect-square">
-        <img src="/eclat-2.jpg" alt="Eclat - 2" class="w-full h-full object-cover hover:scale-105 transition-transform duration-300" />
-      </button>
-    </div>
+    <section class="case wrap">
+      <div class="case-label"><span class="idx">01</span><span class="eyebrow">Overview</span></div>
+      <div class="case-body">
+        <p>The web design for Éclat Studio is conceived as a digital extension of luxury. Every element is composed to feel polished, intentional, and considered — creating an experience as refined as the jewellery it presents.</p>
+      </div>
+    </section>
 
-    {/* Copy Link */}
-    <div class="mb-12">
-      <button id="copy-link-btn" class="flex items-center gap-2 px-4 py-2 border border-gray-900 rounded-full text-sm hover:bg-gray-50 transition-colors cursor-pointer">
-        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13.828 10.172a4 4 0 00-5.656 0l-4 4a4 4 0 105.656 5.656l1.102-1.101m-.758-4.899a4 4 0 005.658 0l4-4a4 4 0 00-5.656-5.656l-1.1 1.1" />
-        </svg>
-        <span>Copy Link</span>
-      </button>
-    </div>
+    <section class="wrap">
+      <div class="pair">
+        <figure class="ph s6 r43" data-lightbox><img src="/eclat-1.jpg" alt="Éclat website design — homepage for a high-end jewellery boutique, by Aenea" /></figure>
+        <figure class="ph s6 r43" data-lightbox><img src="/eclat-2.jpg" alt="Éclat website design — editorial product and layout detail" /></figure>
+      </div>
+    </section>
 
-    {/* Description */}
-    <div>
-      <p class="text-sm md:text-base text-gray-700 mb-4 leading-relaxed">
-        The web design for Éclat Studio is conceived as a digital extension of luxury. Every element is composed to feel polished, intentional, and considered - creating an experience as refined as it is visually refined.
-      </p>
-      
-      <p class="text-sm md:text-base text-gray-700 mb-4 leading-relaxed">
-        The layout embraces restraint. Space, typography, and imagery carry the narrative. Clean compositions are paired with subtle details that elevate the overall feel - nothing accidental, every interaction measured and deliberate.
-      </p>
-      
-      <p class="text-sm md:text-base text-gray-700 mb-4 leading-relaxed">
-        A sense of modern elegance runs throughout. Editorial transitions, refined typography, and curated visuals work together to create a website that commands attention quietly - with confidence and clarity.
-      </p>
-      
-      <p class="text-sm md:text-base text-gray-700 leading-relaxed">
-        The colour palette and visual hierarchy ensure cohesion across every screen. A digital space that mirrors the atmosphere of a boutique interior - immersive, composed, and unmistakably high-end.
-      </p>
-    </div>
-  </section>
+    <section class="case wrap">
+      <div class="case-label"><span class="idx">02</span><span class="eyebrow">The Experience</span></div>
+      <div class="case-body">
+        <p>The layout embraces restraint. Space, typography, and imagery carry the narrative — clean compositions paired with subtle details that elevate the overall feel. Nothing accidental; every interaction measured and deliberate.</p>
+        <p>A sense of modern elegance runs throughout. Editorial transitions, refined typography, and curated visuals create a website that commands attention quietly — with confidence and clarity.</p>
+      </div>
+    </section>
+
+    <section class="case wrap">
+      <div class="case-label"><span class="idx">03</span><span class="eyebrow">Outcome</span></div>
+      <div class="case-body">
+        <p>The colour palette and visual hierarchy ensure cohesion across every screen — a digital space that mirrors the atmosphere of a boutique interior: immersive, composed, and unmistakably high-end.</p>
+      </div>
+    </section>
+
+    <section class="next wrap">
+      <a href="/work/jewellery" class="next-link">
+        <span class="next-k">Next project</span>
+        <span class="next-title">Jewellery Brand <span class="arr" aria-hidden="true">↗</span></span>
+        <span class="next-cat">Social Visuals</span>
+      </a>
+    </section>
+  </main>
 
   <Footer />
   <GalleryLightbox />
 </Layout>
-
-<script>
-  document.getElementById('copy-link-btn').addEventListener('click', () => {
-    navigator.clipboard.writeText(window.location.href);
-    const btn = document.getElementById('copy-link-btn');
-    const originalHTML = btn.innerHTML;
-    btn.innerHTML = '<svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41L9 16.17z"/></svg><span>Copied!</span>';
-    setTimeout(() => {
-      btn.innerHTML = originalHTML;
-    }, 2000);
-  });
-</script>

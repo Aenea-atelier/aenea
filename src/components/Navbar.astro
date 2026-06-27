@@ -1,27 +1,44 @@
-<nav class="border-b border-gray-200 py-4 md:py-6">
-  <div class="px-6 md:px-12 flex items-center justify-between">
-    {/* Logo */}
-    <a href="/" class="text-sm font-light tracking-widest hover:text-gray-600 transition-colors">
-      ΛENEA
+---
+const { current = "" } = Astro.props;
+---
+<header id="site-header">
+  <div class="wrap nav">
+    <a href="/" class="brand-lockup" aria-label="Aenea — home">
+      <img class="brand-logo" src="/logo-aenea.png" alt="" />
+      <span class="brand-divider" aria-hidden="true"></span>
+      <span class="brand-desc">Branding &amp; UX/UI Studio</span>
     </a>
-
-    {/* Links */}
-    <div class="flex gap-4 text-sm text-gray-900">
-      <a href="/studio" class="hover:text-gray-600 transition-colors">Studio</a>
-      <span class="text-gray-400">|</span>
-      <a href="/#services" class="hover:text-gray-600 transition-colors">Services</a>
-      <span class="text-gray-400">|</span>
-      <a href="https://enas-newsletter-309b7c.beehiiv.com" target="_blank" class="hover:text-gray-600 transition-colors">Letters from me</a>
-      <span class="text-gray-400">|</span>
-      <a href="/work" class="hover:text-gray-600 transition-colors">My Work</a>
+    <div class="nav-right">
+      <nav class="nav-links" aria-label="Primary">
+        <a href="/" class:list={[{ current: current === "home" }]}>Home</a>
+        <a href="/studio" class:list={[{ current: current === "studio" }]}>Studio</a>
+        <a href="/#services">Services</a>
+        <a href="/work" class:list={[{ current: current === "work" }]}>Work</a>
+      </nav>
+      <span class="status" aria-label="Studio availability"><span class="status-dot" aria-hidden="true"></span>Open for 2026</span>
+      <a href="/#contact" class="say-hi">Say Hi</a>
     </div>
-
-    {/* Say Hi */}
-    <button class="px-4 py-2 bg-gray-900 text-white rounded-full text-sm hover:bg-gray-800 transition-colors flex items-center gap-2">
-      Say Hi
-      <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3" />
-      </svg>
-    </button>
+    <button class="menu-btn" id="menu-open" aria-label="Open menu">Menu</button>
   </div>
-</nav>
+</header>
+
+<div class="overlay" id="overlay" aria-hidden="true">
+  <button class="overlay-close" id="menu-close" aria-label="Close menu">Close</button>
+  <a href="/">Home</a>
+  <a href="/studio">Studio</a>
+  <a href="/#services">Services</a>
+  <a href="https://enas-newsletter-309b7c.beehiiv.com">Letters from me</a>
+  <a href="/work">Work</a>
+  <a href="/#contact">Say Hi</a>
+</div>
+
+<script is:inline>
+  const header = document.getElementById('site-header');
+  const onScroll = () => header.classList.toggle('scrolled', window.scrollY > 8);
+  onScroll(); window.addEventListener('scroll', onScroll, { passive: true });
+  const overlay = document.getElementById('overlay');
+  const setMenu = (s) => { overlay.classList.toggle('open', s); document.body.style.overflow = s ? 'hidden' : ''; };
+  document.getElementById('menu-open')?.addEventListener('click', () => setMenu(true));
+  document.getElementById('menu-close')?.addEventListener('click', () => setMenu(false));
+  overlay.querySelectorAll('a').forEach(a => a.addEventListener('click', () => setMenu(false)));
+</script>

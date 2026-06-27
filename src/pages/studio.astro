@@ -2,66 +2,65 @@
 import Layout from '../layouts/Layout.astro';
 import Navbar from '../components/Navbar.astro';
 import Footer from '../components/Footer.astro';
+
+const title = "The Studio — Aenea | Boutique Branding & UX/UI Design Studio, Norway";
+const description = "Aenea is a boutique branding and UX/UI studio in Norway — founded on restraint, strategy, and detail. Working with architecture studios, hotels, and design-led brands on brand identities and websites built to last.";
 ---
 
-<Layout title="Studio — Aenea">
-  <Navbar />
-  
-  <section class="px-6 md:px-12 py-16 md:py-24 text-left">
-    <h1 class="text-4xl md:text-5xl font-medium text-gray-900 mb-8">The Studio Behind The Work</h1>
+<Layout title={title} description={description}>
+  <Navbar current="studio" />
 
-    <div class="space-y-6 text-sm md:text-base text-gray-700 leading-relaxed mb-12">
-      <p>
-        Aenea was built on the belief that great design is never just visual. It is structural. It is strategic. It is the result of paying attention to things most people overlook. I started this studio because I wanted to work differently - closely, carefully, and only on projects I could fully commit to. Not a production line. A practice.
-      </p>
-      
-      <p>
-        The name Aenea carries a sense of purpose and permanence. That's intentional. Everything I create is designed to hold - across time, across touchpoints, across contexts.
-      </p>
-    </div>
+  <main>
+    <section class="studio-hero wrap">
+      <span class="eyebrow">The Studio</span>
+      <h1 class="studio-title">The studio behind the work.</h1>
+      <p class="studio-lead">Aenea is a boutique branding and UX/UI studio in Norway — built on the belief that great design is never just visual. It&rsquo;s structural, it&rsquo;s strategic, and it&rsquo;s the result of paying attention to what most people overlook.</p>
+    </section>
 
-    <h2 class="text-3xl md:text-4xl font-medium text-gray-900 mb-6">How I Work</h2>
+    <section class="statement wrap">
+      <p class="statement-lead">I started this studio to work differently — closely, carefully, and only on projects I could fully commit to. Not a production line. A practice.</p>
+      <p class="statement-body">The name Aenea carries a sense of purpose and permanence. That&rsquo;s intentional: everything I design is built to hold — across time, across touchpoints, across contexts.</p>
+    </section>
 
-    <div class="space-y-6 text-sm md:text-base text-gray-700 leading-relaxed mb-12">
-      <p>
-        Design, for me, begins long before anything is placed on a canvas. It begins with understanding - the brand, the audience, the gap between where a business is and where it wants to be. From there, every decision has a reason. Every typeface, every margin, every colour choice is in service of something larger than aesthetics.
-      </p>
-      
-      <p>
-        I studied design formally, and I've spent years refining what that education gave me - learning to trust restraint, to value atmosphere, and to understand that the details clients rarely notice are often the ones that make everything feel right.
-      </p>
-      
-      <p>
-        Precision matters. Process matters. And so does the relationship - because the best work always comes from genuine collaboration, not just a brief and a deadline.
-      </p>
-    </div>
+    <section class="case wrap">
+      <div class="case-label"><span class="idx">01</span><span class="eyebrow">How I Work</span></div>
+      <div class="case-body">
+        <p>Design, for me, begins long before anything is placed on a canvas. It begins with understanding — the brand, the audience, and the gap between where a business is and where it wants to be. From there, every decision has a reason: every typeface, every margin, every colour choice in service of something larger than aesthetics.</p>
+        <p>I studied design formally and have spent years refining what that education gave me — learning to trust restraint, to value atmosphere, and to understand that the details clients rarely notice are often the ones that make everything feel right.</p>
+        <p>Precision matters. Process matters. And so does the relationship — because the best work always comes from genuine collaboration, not just a brief and a deadline.</p>
+      </div>
+    </section>
 
-    <h2 class="text-3xl md:text-4xl font-medium text-gray-900 mb-6">Who I Work With</h2>
+    <section class="case wrap">
+      <div class="case-label"><span class="idx">02</span><span class="eyebrow">Who I Work With</span></div>
+      <div class="case-body">
+        <p>I work with architecture studios, hotels, restaurants, jewellery brands, and beauty spaces — businesses where design is already part of the offer, not an afterthought.</p>
+        <p>These are clients who understand that visual identity shapes perception before a single conversation takes place. That a website earns trust or loses it in seconds. That consistency isn&rsquo;t rigidity — it&rsquo;s confidence.</p>
+        <p>I take on a small number of clients at a time. A deliberate choice: it means every project gets full attention, honest thinking, and work I&rsquo;d put my name on — because I do.</p>
+        <ul class="sectors">
+          <li><span class="s-idx">01</span> Architecture studios</li>
+          <li><span class="s-idx">02</span> Hotels &amp; hospitality</li>
+          <li><span class="s-idx">03</span> Restaurants</li>
+          <li><span class="s-idx">04</span> Jewellery brands</li>
+          <li><span class="s-idx">05</span> Beauty spaces</li>
+        </ul>
+      </div>
+    </section>
 
-    <div class="space-y-6 text-sm md:text-base text-gray-700 leading-relaxed mb-12">
-      <p>
-        I work with architecture studios, hotels, restaurants, jewellery brands, and beauty spaces - businesses where design is already part of the offer, not an afterthought.
-      </p>
-      
-      <p>
-        These are clients who understand that visual identity shapes perception before a single conversation takes place. That a website either earns trust or loses it in seconds. That consistency is not rigidity - it is confidence.
-      </p>
-      
-      <p>
-        I work with a small number of clients at a time. That's a deliberate choice. It means every project receives full attention, honest thinking, and work that I would put my name on - because I do.
-      </p>
-    </div>
+    <section class="quote-band">
+      <div class="wrap">
+        <p class="quote">I&rsquo;m not interested in design that simply looks good. I&rsquo;m interested in design that works — and still looks good five years from now.</p>
+        <span class="quote-by">Aenea</span>
+      </div>
+    </section>
 
-    <blockquote class="text-2xl md:text-3xl font-medium text-gray-900 mb-12 italic">
-      "I'm not interested in design that simply looks good. I'm interested in design that works - and that still looks good five years from now."
-    </blockquote>
-
-    <h2 class="text-3xl md:text-4xl font-medium text-gray-900 mb-6 pt-12">Let's Build Something Worth Keeping</h2>
-
-    <p class="text-sm md:text-base text-gray-700 leading-relaxed">
-      If you're working on a brand, a website, or a visual system that deserves real attention - I'd like to hear about it.
-    </p>
-  </section>
+    <section class="studio-cta wrap">
+      <span class="eyebrow">Get in touch</span>
+      <h2>Let&rsquo;s build something worth keeping.</h2>
+      <p>If you&rsquo;re working on a brand, a website, or a visual system that deserves real attention, I&rsquo;d like to hear about it.</p>
+      <a class="btn" href="/#contact">Start a conversation <span aria-hidden="true">↗</span></a>
+    </section>
+  </main>
 
   <Footer />
 </Layout>

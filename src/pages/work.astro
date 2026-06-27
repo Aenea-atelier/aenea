@@ -2,44 +2,47 @@
 import Layout from '../layouts/Layout.astro';
 import Navbar from '../components/Navbar.astro';
 import Footer from '../components/Footer.astro';
-import GalleryLightbox from '../components/GalleryLightbox.astro';
+
+const title = "Selected Work — Brand Identity & Web Design Projects | Aenea";
+const description = "Selected work from Aenea — brand identities, websites, and visual systems for architecture studios, hotels, jewellery, and design-led brands.";
 
 const projects = [
-  { title: 'Atelier B Brand Design', slug: 'atelier-b', desc: 'Identity design for a contemporary architecture studio.', img: '/atelier-b.jpg' },
-  { title: 'Golden Hour Logo Design', slug: 'golden-hour', desc: 'Logo design for a modern European dining concept.', img: '/golden-hour.jpg' },
-  { title: 'Jewellery Brand SM Visuals', slug: 'jewellery', desc: 'Social media visual system for a fine jewellery brand.', img: '/jewellery.jpg' },
-  { title: 'AI-Generated Brand Imagery', slug: 'ai-imagery', desc: 'AI-assisted brand imagery exploring form, texture, and mood.', img: '/ai-imagery.jpg' },
-  { title: 'Ceramo Studio Logo Design', slug: 'ceramo', desc: 'Logo design for a ceramic studio.', img: '/ceramo.jpg' },
-  { title: 'Conture Salon Brand Design', slug: 'conture', desc: 'Brand identity for a modern beauty salon.', img: '/conture.jpg' },
-  { title: 'Éclat Studio Web Page Design', slug: 'eclat', desc: 'Web design for a high-end jewellery boutique.', img: '/eclat.jpg' },
+  { title: 'Atelier B', cat: 'Brand Identity', slug: 'atelier-b', img: '/atelier-b.jpg', span: 'c7', ar: 'a-lg' },
+  { title: 'Golden Hour', cat: 'Logo Design', slug: 'golden-hour', img: '/golden-hour.jpg', span: 'c5', ar: 'a-tall' },
+  { title: 'Ceramo', cat: 'Logo Design', slug: 'ceramo', img: '/ceramo.jpg', span: 'c5', ar: 'a-tall' },
+  { title: 'Conture', cat: 'Brand Identity', slug: 'conture', img: '/conture.jpg', span: 'c7', ar: 'a-lg' },
+  { title: 'Éclat', cat: 'Web Design', slug: 'eclat', img: '/eclat.jpg', span: 'c6', ar: 'a-med' },
+  { title: 'Jewellery Brand', cat: 'Social Visuals', slug: 'jewellery', img: '/jewellery.jpg', span: 'c6', ar: 'a-med' },
+  { title: 'AI Brand Imagery', cat: 'Art Direction', slug: 'ai-imagery', img: '/ai-imagery.jpg', span: 'c12', ar: 'a-wide' },
 ];
 ---
 
-<Layout title="Selected Work — Aenea">
-  <Navbar />
-  
-  <section class="px-6 md:px-12 py-16 md:py-24">
-    <h1 class="text-5xl md:text-6xl font-medium text-gray-900 mb-4">Selected Work</h1>
-    <p class="text-sm md:text-base text-gray-600 max-w-4xl mb-16 whitespace-nowrap">
-      A curated selection of brand identities, digital experiences, and visual systems - built for design-led businesses.
-    </p>
+<Layout title={title} description={description}>
+  <Navbar current="work" />
 
-    <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
-      {projects.map((p) => (
-        <div class="group flex flex-col">
-          <button data-lightbox class="overflow-hidden rounded-lg mb-3 bg-gray-100 w-full aspect-square cursor-pointer flex items-center justify-center border-none p-0">
-            <img src={p.img} alt={p.title} class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" />
-          </button>
-          <h3 class="text-sm font-medium text-gray-900 mb-2">{p.title}</h3>
-          <p class="text-xs text-gray-400 leading-relaxed mb-3 flex-grow line-clamp-2">{p.desc}</p>
-          <a href={`/work/${p.slug}`} class="text-xs font-medium text-gray-900 hover:text-gray-600 transition-colors">
-            View Full Project →
-          </a>
-        </div>
-      ))}
-    </div>
-  </section>
+  <main>
+    <section class="proj-intro wrap">
+      <span class="eyebrow proj-cat">Selected Work</span>
+      <h1 class="proj-title">An index of recent projects.</h1>
+      <p class="proj-lead">A curated selection of brand identities, digital experiences, and visual systems — built for design-led businesses across architecture, hospitality, and beyond.</p>
+    </section>
+
+    <section class="wrap" style="padding-bottom:clamp(60px,10vh,120px)">
+      <div class="work-grid">
+        {projects.map((p) => (
+          <article class={`plate ${p.span} ${p.ar}`}>
+            <a class="plate-link" href={`/work/${p.slug}`}>
+              <div class="plate-img"><img src={p.img} loading="lazy" alt={`${p.title} — ${p.cat} by Aenea`} /></div>
+              <div class="plate-meta">
+                <div><span class="plate-title">{p.title}</span><span class="plate-cat">{p.cat}</span></div>
+                <span class="plate-view" aria-hidden="true">↗</span>
+              </div>
+            </a>
+          </article>
+        ))}
+      </div>
+    </section>
+  </main>
 
   <Footer />
-  <GalleryLightbox />
 </Layout>

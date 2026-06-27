@@ -3,91 +3,77 @@ import Layout from '../../layouts/Layout.astro';
 import Navbar from '../../components/Navbar.astro';
 import Footer from '../../components/Footer.astro';
 import GalleryLightbox from '../../components/GalleryLightbox.astro';
+
+const title = "AI Brand Imagery — Art Direction & Visual Exploration | Aenea";
+const description = "AI-generated brand imagery by Aenea, approached as a creative tool — exploring atmosphere, material, and mood in early brand development. Technology in service of craft.";
 ---
 
-<Layout title="AI-Generated Brand Imagery — Aenea">
-  <Navbar />
-  
-  <section class="px-6 md:px-12 py-16 md:py-24">
-    <div class="mb-8">
-      <h1 class="text-4xl md:text-5xl font-medium text-gray-900 mb-2">AI-Generated Brand Imagery</h1>
-      <div class="flex gap-6 text-xs md:text-sm text-gray-600">
-        <span><strong>Service:</strong> Visual Exploration</span>
-        <span><strong>Year:</strong> 2025</span>
+<Layout title={title} description={description}>
+  <Navbar current="work" />
+
+  <main>
+    <section class="proj-intro wrap">
+      <a href="/work" class="back-link"><span aria-hidden="true">←</span> Selected Work</a>
+      <span class="eyebrow proj-cat">Art Direction</span>
+      <h1 class="proj-title">AI Brand Imagery</h1>
+      <p class="proj-lead">AI-generated imagery approached as a creative tool, not a shortcut — used in early brand development to explore atmosphere, material, and mood before committing to a visual direction.</p>
+      <div class="proj-meta">
+        <div><div class="meta-k">Service</div><div class="meta-v">Art Direction</div></div>
+        <div><div class="meta-k">Sector</div><div class="meta-v">Brand Exploration</div></div>
+        <div><div class="meta-k">Year</div><div class="meta-v">2025</div></div>
+        <div><div class="meta-k">Deliverables</div><div class="meta-v">Concept imagery, Art direction, Mood</div></div>
       </div>
-    </div>
+    </section>
 
-    {/* Hero + Gallery Grid */}
-    <div class="flex gap-4 mb-12 items-start">
-      {/* Left: Large hero image */}
-      <div class="w-1/2">
-        <button data-lightbox class="w-full overflow-hidden rounded-lg bg-gray-100 cursor-pointer border-none p-0 h-160">
-          <img src="/ai-imagery-hero.jpg" alt="AI-Generated Brand Imagery" class="w-full h-full object-cover hover:scale-105 transition-transform duration-300" />
-        </button>
+    <figure class="bleed" data-lightbox>
+      <img src="/ai-imagery-hero.jpg" alt="AI brand imagery — concept art direction exploring form, texture, and mood, by Aenea" />
+    </figure>
+
+    <section class="case wrap">
+      <div class="case-label"><span class="idx">01</span><span class="eyebrow">Overview</span></div>
+      <div class="case-body">
+        <p>AI-generated imagery approached as a creative tool, not a shortcut. Used in the early stages of brand development, it lets us explore atmosphere, material, and mood before committing to a visual direction — a space for experimentation, testing what a brand could feel like before defining what it will look like.</p>
       </div>
+    </section>
 
-      {/* Right: 2x2 Grid */}
-      <div class="w-1/2 grid grid-cols-2 gap-2">
-        <button data-lightbox class="overflow-hidden rounded-lg bg-gray-100 cursor-pointer border-none p-0 aspect-square">
-          <img src="/ai-imagery-1.jpg" alt="AI Imagery - 1" class="w-full h-full object-cover hover:scale-105 transition-transform duration-300" />
-        </button>
-        
-        <button data-lightbox class="overflow-hidden rounded-lg bg-gray-100 cursor-pointer border-none p-0 aspect-square">
-          <img src="/ai-imagery-2.jpg" alt="AI Imagery - 2" class="w-full h-full object-cover hover:scale-105 transition-transform duration-300" />
-        </button>
-        
-        <button data-lightbox class="overflow-hidden rounded-lg bg-gray-100 cursor-pointer border-none p-0 aspect-square">
-          <img src="/ai-imagery-3.jpg" alt="AI Imagery - 3" class="w-full h-full object-cover hover:scale-105 transition-transform duration-300" />
-        </button>
-        
-        <button data-lightbox class="overflow-hidden rounded-lg bg-gray-100 cursor-pointer border-none p-0 aspect-square">
-          <img src="/ai-imagery-4.jpg" alt="AI Imagery - 4" class="w-full h-full object-cover hover:scale-105 transition-transform duration-300" />
-        </button>
+    <section class="wrap">
+      <div class="pair">
+        <figure class="ph s7 r43" data-lightbox><img src="/ai-imagery-1.jpg" alt="AI brand imagery exploring material and texture, by Aenea" /></figure>
+        <figure class="ph s5 r45" data-lightbox><img src="/ai-imagery-2.jpg" alt="AI-generated concept image exploring mood and atmosphere" /></figure>
       </div>
-    </div>
+    </section>
 
-    {/* Copy Link */}
-    <div class="mb-12">
-      <button id="copy-link-btn" class="flex items-center gap-2 px-4 py-2 border border-gray-900 rounded-full text-sm hover:bg-gray-50 transition-colors cursor-pointer">
-        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13.828 10.172a4 4 0 00-5.656 0l-4 4a4 4 0 105.656 5.656l1.102-1.101m-.758-4.899a4 4 0 005.658 0l4-4a4 4 0 00-5.656-5.656l-1.1 1.1" />
-        </svg>
-        <span>Copy Link</span>
-      </button>
-    </div>
+    <section class="case wrap">
+      <div class="case-label"><span class="idx">02</span><span class="eyebrow">The Approach</span></div>
+      <div class="case-body">
+        <p>Each image begins with a brief and ends with intention. Prompting, selection, and refinement shape visuals that feel considered rather than generated. The result is imagery that supports brand storytelling and expands the visual world of a project — plausible, elevated, and on-brand.</p>
+        <p>Technology in service of craft. Not the other way around.</p>
+      </div>
+    </section>
 
-    {/* Description */}
-    <div>
-      <p class="text-sm md:text-base text-gray-700 mb-4 leading-relaxed">
-        AI-generated imagery approached as a creative tool, not a shortcut.
-      </p>
-      
-      <p class="text-sm md:text-base text-gray-700 mb-4 leading-relaxed">
-        Used in the early stages of brand development, it allows us to explore atmosphere, material, and mood before committing to a visual direction. It is a space for experimentation - testing what a brand could feel like before defining what it will look like.
-      </p>
-      
-      <p class="text-sm md:text-base text-gray-700 mb-4 leading-relaxed">
-        Each image begins with a brief and ends with intention. Prompting, selection, and refinement shape visuals that feel considered rather than generated. The result is imagery that supports brand storytelling and expands the visual world of a project - plausible, elevated, and on-brand.
-      </p>
-      
-      <p class="text-sm md:text-base text-gray-700 leading-relaxed">
-        Technology in service of craft. Not the other way around.
-      </p>
-    </div>
-  </section>
+    <section class="wrap">
+      <div class="pair">
+        <figure class="ph s5 r45" data-lightbox><img src="/ai-imagery-3.jpg" alt="AI brand imagery — abstract texture study" /></figure>
+        <figure class="ph s7 r43" data-lightbox><img src="/ai-imagery-4.jpg" alt="AI brand imagery — atmospheric concept frame" /></figure>
+      </div>
+    </section>
+
+    <section class="case wrap">
+      <div class="case-label"><span class="idx">03</span><span class="eyebrow">Outcome</span></div>
+      <div class="case-body">
+        <p>Imagery that supports brand storytelling and expands the visual world of a project — plausible, elevated, and unmistakably on-brand, while the human direction stays firmly in control.</p>
+      </div>
+    </section>
+
+    <section class="next wrap">
+      <a href="/work/atelier-b" class="next-link">
+        <span class="next-k">Next project</span>
+        <span class="next-title">Atelier B <span class="arr" aria-hidden="true">↗</span></span>
+        <span class="next-cat">Brand Identity</span>
+      </a>
+    </section>
+  </main>
 
   <Footer />
   <GalleryLightbox />
 </Layout>
-
-<script>
-  document.getElementById('copy-link-btn').addEventListener('click', () => {
-    navigator.clipboard.writeText(window.location.href);
-    const btn = document.getElementById('copy-link-btn');
-    const originalHTML = btn.innerHTML;
-    btn.innerHTML = '<svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41L9 16.17z"/></svg><span>Copied!</span>';
-    setTimeout(() => {
-      btn.innerHTML = originalHTML;
-    }, 2000);
-  });
-</script>

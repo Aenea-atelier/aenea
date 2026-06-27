@@ -3,87 +3,77 @@ import Layout from '../../layouts/Layout.astro';
 import Navbar from '../../components/Navbar.astro';
 import Footer from '../../components/Footer.astro';
 import GalleryLightbox from '../../components/GalleryLightbox.astro';
+
+const title = "Jewellery Brand — Social Media Visual System | Aenea";
+const description = "A social media visual system by Aenea for a fine jewellery brand — a curated feed with ivory tones, soft shadows, and gold, art-directed for a consistent, recognisable atmosphere.";
 ---
 
-<Layout title="Jewellery Brand Social Media Visuals — Aenea">
-  <Navbar />
-  
-  <section class="px-6 md:px-12 py-16 md:py-24">
-    <div class="mb-8">
-      <h1 class="text-4xl md:text-5xl font-medium text-gray-900 mb-2">Jewellery Brand Social Media Visuals</h1>
-      <div class="flex gap-6 text-xs md:text-sm text-gray-600">
-        <span><strong>Service:</strong> Visual System</span>
-        <span><strong>Year:</strong> 2025</span>
+<Layout title={title} description={description}>
+  <Navbar current="work" />
+
+  <main>
+    <section class="proj-intro wrap">
+      <a href="/work" class="back-link"><span aria-hidden="true">←</span> Selected Work</a>
+      <span class="eyebrow proj-cat">Social Visuals</span>
+      <h1 class="proj-title">Jewellery Brand</h1>
+      <p class="proj-lead">A social media visual system for a fine jewellery brand — designed to function as a curated feed, not a collection of posts, with one consistent atmosphere across the entire grid.</p>
+      <div class="proj-meta">
+        <div><div class="meta-k">Service</div><div class="meta-v">Social Visuals</div></div>
+        <div><div class="meta-k">Sector</div><div class="meta-v">Jewellery &amp; Luxury</div></div>
+        <div><div class="meta-k">Year</div><div class="meta-v">2025</div></div>
+        <div><div class="meta-k">Deliverables</div><div class="meta-v">Art direction, Visual system, Templates</div></div>
       </div>
-    </div>
+    </section>
 
-    {/* Hero + Gallery Grid */}
-    <div class="flex gap-4 mb-12 items-start">
-      {/* Left: Large hero image */}
-      <div class="w-1/2">
-        <button data-lightbox class="w-full overflow-hidden rounded-lg bg-gray-100 cursor-pointer border-none p-0 h-160">
-          <img src="/jewellery-hero.jpg" alt="Jewellery Brand" class="w-full h-full object-cover hover:scale-105 transition-transform duration-300" />
-        </button>
+    <figure class="bleed" data-lightbox>
+      <img src="/jewellery-hero.jpg" alt="Jewellery brand social media visual system — curated feed art direction by Aenea" />
+    </figure>
+
+    <section class="case wrap">
+      <div class="case-label"><span class="idx">01</span><span class="eyebrow">Overview</span></div>
+      <div class="case-body">
+        <p>A social media visual system designed to function as a curated feed — not a collection of posts. Every frame is considered as part of a whole, so the brand reads as one continuous, intentional atmosphere.</p>
       </div>
+    </section>
 
-      {/* Right: 2x2 Grid */}
-      <div class="w-1/2 grid grid-cols-2 gap-2">
-        <button data-lightbox class="overflow-hidden rounded-lg bg-gray-100 cursor-pointer border-none p-0 aspect-square">
-          <img src="/jewellery-1.jpg" alt="Jewellery - 1" class="w-full h-full object-cover hover:scale-105 transition-transform duration-300" />
-        </button>
-        
-        <button data-lightbox class="overflow-hidden rounded-lg bg-gray-100 cursor-pointer border-none p-0 aspect-square">
-          <img src="/jewellery-2.jpg" alt="Jewellery - 2" class="w-full h-full object-cover hover:scale-105 transition-transform duration-300" />
-        </button>
-        
-        <button data-lightbox class="overflow-hidden rounded-lg bg-gray-100 cursor-pointer border-none p-0 aspect-square">
-          <img src="/jewellery-3.jpg" alt="Jewellery - 3" class="w-full h-full object-cover hover:scale-105 transition-transform duration-300" />
-        </button>
-        
-        <button data-lightbox class="overflow-hidden rounded-lg bg-gray-100 cursor-pointer border-none p-0 aspect-square">
-          <img src="/jewellery-4.jpg" alt="Jewellery - 4" class="w-full h-full object-cover hover:scale-105 transition-transform duration-300" />
-        </button>
+    <section class="wrap">
+      <div class="pair">
+        <figure class="ph s7 r43" data-lightbox><img src="/jewellery-1.jpg" alt="Jewellery brand editorial still — social visual system by Aenea" /></figure>
+        <figure class="ph s5 r45" data-lightbox><img src="/jewellery-2.jpg" alt="Jewellery brand product close-up with soft shadow and gold tones" /></figure>
       </div>
-    </div>
+    </section>
 
-    {/* Copy Link */}
-    <div class="mb-12">
-      <button id="copy-link-btn" class="flex items-center gap-2 px-4 py-2 border border-gray-900 rounded-full text-sm hover:bg-gray-50 transition-colors cursor-pointer">
-        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13.828 10.172a4 4 0 00-5.656 0l-4 4a4 4 0 105.656 5.656l1.102-1.101m-.758-4.899a4 4 0 005.658 0l4-4a4 4 0 00-5.656-5.656l-1.1 1.1" />
-        </svg>
-        <span>Copy Link</span>
-      </button>
-    </div>
+    <section class="case wrap">
+      <div class="case-label"><span class="idx">02</span><span class="eyebrow">The System</span></div>
+      <div class="case-body">
+        <p>Ivory tones, soft shadows, and touches of gold establish a consistent visual temperature. Every image — product close-ups, editorial stills, abstract textures — is selected and directed to hold the same atmosphere across the entire grid.</p>
+        <p>The approach is restrained by design. Visuals never compete with the jewellery; they frame it. Negative space does as much work as the subject itself.</p>
+      </div>
+    </section>
 
-    {/* Description */}
-    <div>
-      <p class="text-sm md:text-base text-gray-700 mb-4 leading-relaxed">
-        A social media visual system designed to function as a curated feed - not a collection of posts.
-      </p>
-      
-      <p class="text-sm md:text-base text-gray-700 mb-4 leading-relaxed">
-        Ivory tones, soft shadows, and touches of gold establish a consistent visual temperature. Every image - product close-ups, editorial stills, abstract textures - is selected and directed to maintain the same atmosphere across the entire grid.
-      </p>
-      
-      <p class="text-sm md:text-base text-gray-700 mb-4 leading-relaxed">
-        The approach is restrained by design. Visuals never compete with the jewellery; they frame it. Negative space does as much work as the subject itself. The result is a feed that feels intentional, recognisable, and brand-consistent - scroll after scroll.
-      </p>
-    </div>
-  </section>
+    <section class="wrap">
+      <div class="pair">
+        <figure class="ph s5 r45" data-lightbox><img src="/jewellery-3.jpg" alt="Jewellery brand abstract texture frame" /></figure>
+        <figure class="ph s7 r43" data-lightbox><img src="/jewellery-4.jpg" alt="Jewellery brand feed layout across multiple posts" /></figure>
+      </div>
+    </section>
+
+    <section class="case wrap">
+      <div class="case-label"><span class="idx">03</span><span class="eyebrow">Outcome</span></div>
+      <div class="case-body">
+        <p>The result is a feed that feels intentional, recognisable, and brand-consistent — scroll after scroll. A system that keeps the brand unmistakably itself across every post.</p>
+      </div>
+    </section>
+
+    <section class="next wrap">
+      <a href="/work/ai-imagery" class="next-link">
+        <span class="next-k">Next project</span>
+        <span class="next-title">AI Brand Imagery <span class="arr" aria-hidden="true">↗</span></span>
+        <span class="next-cat">Art Direction</span>
+      </a>
+    </section>
+  </main>
 
   <Footer />
   <GalleryLightbox />
 </Layout>
-
-<script>
-  document.getElementById('copy-link-btn').addEventListener('click', () => {
-    navigator.clipboard.writeText(window.location.href);
-    const btn = document.getElementById('copy-link-btn');
-    const originalHTML = btn.innerHTML;
-    btn.innerHTML = '<svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41L9 16.17z"/></svg><span>Copied!</span>';
-    setTimeout(() => {
-      btn.innerHTML = originalHTML;
-    }, 2000);
-  });
-</script>

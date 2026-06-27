@@ -3,88 +3,77 @@ import Layout from '../../layouts/Layout.astro';
 import Navbar from '../../components/Navbar.astro';
 import Footer from '../../components/Footer.astro';
 import GalleryLightbox from '../../components/GalleryLightbox.astro';
+
+const title = "Conture — Brand Identity for a Modern Beauty Salon | Aenea";
+const description = "Conture is a brand identity by Aenea for a modern beauty salon — modern elegance through restraint, with clean lines, balanced proportions, and an earthy, grounded palette.";
 ---
 
-<Layout title="Conture Salon Brand Design — Aenea">
-  <Navbar />
-  
-  <section class="px-6 md:px-12 py-16 md:py-24">
-    <div class="mb-8">
-      <h1 class="text-4xl md:text-5xl font-medium text-gray-900 mb-2">Conture Salon Brand Design</h1>
-      <div class="flex gap-6 text-xs md:text-sm text-gray-600">
-        <span><strong>Service:</strong> Brand Identity</span>
-        <span><strong>Year:</strong> 2025</span>
+<Layout title={title} description={description}>
+  <Navbar current="work" />
+
+  <main>
+    <section class="proj-intro wrap">
+      <a href="/work" class="back-link"><span aria-hidden="true">←</span> Selected Work</a>
+      <span class="eyebrow proj-cat">Brand Identity</span>
+      <h1 class="proj-title">Conture</h1>
+      <p class="proj-lead">A brand identity for a modern beauty salon — modern elegance expressed through what&rsquo;s left out, where minimalism is a structural decision that lets detail and tone speak without competition.</p>
+      <div class="proj-meta">
+        <div><div class="meta-k">Service</div><div class="meta-v">Brand Identity</div></div>
+        <div><div class="meta-k">Sector</div><div class="meta-v">Beauty &amp; Wellness</div></div>
+        <div><div class="meta-k">Year</div><div class="meta-v">2025</div></div>
+        <div><div class="meta-k">Deliverables</div><div class="meta-v">Logotype, Identity system, Applications</div></div>
       </div>
-    </div>
+    </section>
 
-    {/* Hero Image */}
-    <div class="mb-12">
-      <button data-lightbox class="w-full overflow-hidden rounded-lg bg-gray-100 cursor-pointer border-none p-0 h-80">
-        <img src="/conture-hero.jpg" alt="Conture Salon Brand Design" class="w-full h-full object-cover hover:scale-105 transition-transform duration-300" style="object-position: center 50%;" />
-      </button>
-    </div>
+    <figure class="bleed" data-lightbox>
+      <img src="/conture-hero.jpg" alt="Conture brand identity — visual identity for a modern beauty salon, by Aenea" />
+    </figure>
 
-    {/* Gallery - 4 boxes in one row */}
-    <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-4 mb-12">
-      <button data-lightbox class="overflow-hidden rounded-lg bg-gray-100 cursor-pointer border-none p-0 aspect-square">
-        <img src="/conture-1.jpg" alt="Conture - 1" class="w-full h-full object-cover hover:scale-105 transition-transform duration-300" />
-      </button>
-      
-      <button data-lightbox class="overflow-hidden rounded-lg bg-gray-100 cursor-pointer border-none p-0 aspect-square">
-        <img src="/conture-2.jpg" alt="Conture - 2" class="w-full h-full object-cover hover:scale-105 transition-transform duration-300" />
-      </button>
-      
-      <button data-lightbox class="overflow-hidden rounded-lg bg-gray-100 cursor-pointer border-none p-0 aspect-square">
-        <img src="/conture-3.jpg" alt="Conture - 3" class="w-full h-full object-cover hover:scale-105 transition-transform duration-300" />
-      </button>
-      
-      <button data-lightbox class="overflow-hidden rounded-lg bg-gray-100 cursor-pointer border-none p-0 aspect-square">
-        <img src="/conture-4.jpg" alt="Conture - 4" class="w-full h-full object-cover hover:scale-105 transition-transform duration-300" />
-      </button>
-    </div>
+    <section class="case wrap">
+      <div class="case-label"><span class="idx">01</span><span class="eyebrow">Overview</span></div>
+      <div class="case-body">
+        <p>The brand design for Conture Salon begins with a single idea: modern elegance expressed through what&rsquo;s left out. Restraint becomes the strategy — a quiet, confident foundation for a contemporary beauty brand.</p>
+      </div>
+    </section>
 
-    {/* Copy Link */}
-    <div class="mb-12">
-      <button id="copy-link-btn" class="flex items-center gap-2 px-4 py-2 border border-gray-900 rounded-full text-sm hover:bg-gray-50 transition-colors cursor-pointer">
-        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13.828 10.172a4 4 0 00-5.656 0l-4 4a4 4 0 105.656 5.656l1.102-1.101m-.758-4.899a4 4 0 005.658 0l4-4a4 4 0 00-5.656-5.656l-1.1 1.1" />
-        </svg>
-        <span>Copy Link</span>
-      </button>
-    </div>
+    <section class="wrap">
+      <div class="pair">
+        <figure class="ph s7 r43" data-lightbox><img src="/conture-1.jpg" alt="Conture logotype — modern beauty salon identity by Aenea" /></figure>
+        <figure class="ph s5 r45" data-lightbox><img src="/conture-2.jpg" alt="Conture brand system and spacing detail" /></figure>
+      </div>
+    </section>
 
-    {/* Description */}
-    <div>
-      <p class="text-sm md:text-base text-gray-700 mb-4 leading-relaxed">
-        The brand design for Conture Salon begins with a single idea: modern elegance expressed through what's left out.
-      </p>
-      
-      <p class="text-sm md:text-base text-gray-700 mb-4 leading-relaxed">
-        Clean lines and balanced proportions form the foundation. Minimalism here isn't a style choice - it's a structural decision that lets detail and tone speak without competition. Subtle contrasts and deliberate spacing give the identity its edge.
-      </p>
-      
-      <p class="text-sm md:text-base text-gray-700 mb-4 leading-relaxed">
-        The earthy palette grounds the brand in warmth. Muted neutrals and natural tones prevent the design from feeling cold, creating an atmosphere that is sophisticated without distance.
-      </p>
-      
-      <p class="text-sm md:text-base text-gray-700 leading-relaxed">
-        The result is a brand that doesn't need to announce itself. It simply belongs - cohesive across every touchpoint, quietly confident in every application.
-      </p>
-    </div>
-  </section>
+    <section class="case wrap">
+      <div class="case-label"><span class="idx">02</span><span class="eyebrow">The Identity</span></div>
+      <div class="case-body">
+        <p>Clean lines and balanced proportions form the foundation. Minimalism here isn&rsquo;t a style choice — it&rsquo;s a structural decision that lets detail and tone speak without competition. Subtle contrasts and deliberate spacing give the identity its edge.</p>
+        <p>The earthy palette grounds the brand in warmth. Muted neutrals and natural tones keep the design from feeling cold, creating an atmosphere that is sophisticated without distance.</p>
+      </div>
+    </section>
+
+    <section class="wrap">
+      <div class="pair">
+        <figure class="ph s5 r45" data-lightbox><img src="/conture-3.jpg" alt="Conture palette and brand application" /></figure>
+        <figure class="ph s7 r43" data-lightbox><img src="/conture-4.jpg" alt="Conture identity across salon touchpoints" /></figure>
+      </div>
+    </section>
+
+    <section class="case wrap">
+      <div class="case-label"><span class="idx">03</span><span class="eyebrow">Outcome</span></div>
+      <div class="case-body">
+        <p>The result is a brand that doesn&rsquo;t need to announce itself. It simply belongs — cohesive across every touchpoint, quietly confident in every application.</p>
+      </div>
+    </section>
+
+    <section class="next wrap">
+      <a href="/work/eclat" class="next-link">
+        <span class="next-k">Next project</span>
+        <span class="next-title">Éclat <span class="arr" aria-hidden="true">↗</span></span>
+        <span class="next-cat">Web Design</span>
+      </a>
+    </section>
+  </main>
 
   <Footer />
   <GalleryLightbox />
 </Layout>
-
-<script>
-  document.getElementById('copy-link-btn').addEventListener('click', () => {
-    navigator.clipboard.writeText(window.location.href);
-    const btn = document.getElementById('copy-link-btn');
-    const originalHTML = btn.innerHTML;
-    btn.innerHTML = '<svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41L9 16.17z"/></svg><span>Copied!</span>';
-    setTimeout(() => {
-      btn.innerHTML = originalHTML;
-    }, 2000);
-  });
-</script>

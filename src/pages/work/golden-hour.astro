@@ -3,88 +3,77 @@ import Layout from '../../layouts/Layout.astro';
 import Navbar from '../../components/Navbar.astro';
 import Footer from '../../components/Footer.astro';
 import GalleryLightbox from '../../components/GalleryLightbox.astro';
+
+const title = "Golden Hour — Logo Design for a Modern European Dining Concept | Aenea";
+const description = "Golden Hour is a logo and visual identity by Aenea for a modern European restaurant — an Art Deco-inspired mark reinterpreted through a refined, contemporary lens.";
 ---
 
-<Layout title="Golden Hour Logo Design — Aenea">
-  <Navbar />
-  
-  <section class="px-6 md:px-12 py-16 md:py-24">
-    <div class="mb-8">
-      <h1 class="text-4xl md:text-5xl font-medium text-gray-900 mb-2">Golden Hour Logo Design</h1>
-      <div class="flex gap-6 text-xs md:text-sm text-gray-600">
-        <span><strong>Service:</strong> Logo Design</span>
-        <span><strong>Year:</strong> 2025</span>
+<Layout title={title} description={description}>
+  <Navbar current="work" />
+
+  <main>
+    <section class="proj-intro wrap">
+      <a href="/work" class="back-link"><span aria-hidden="true">←</span> Selected Work</a>
+      <span class="eyebrow proj-cat">Logo Design</span>
+      <h1 class="proj-title">Golden Hour</h1>
+      <p class="proj-lead">A logo and identity for a modern European dining concept — Art Deco geometry and quiet glamour, reinterpreted through a contemporary lens for a restaurant where atmosphere and detail arrive at the right moment.</p>
+      <div class="proj-meta">
+        <div><div class="meta-k">Service</div><div class="meta-v">Logo Design</div></div>
+        <div><div class="meta-k">Sector</div><div class="meta-v">Hospitality &amp; Dining</div></div>
+        <div><div class="meta-k">Year</div><div class="meta-v">2025</div></div>
+        <div><div class="meta-k">Deliverables</div><div class="meta-v">Logotype, Identity, Applications</div></div>
       </div>
-    </div>
+    </section>
 
-    {/* Hero Image */}
-    <div class="mb-12">
-      <button data-lightbox class="w-full overflow-hidden rounded-lg bg-gray-100 cursor-pointer border-none p-0 h-80">
-        <img src="/golden-hour-hero.jpg" alt="Golden Hour Logo Design" class="w-full h-full object-cover hover:scale-105 transition-transform duration-300" style="object-position: center 53%;" />
-      </button>
-    </div>
+    <figure class="bleed" data-lightbox>
+      <img src="/golden-hour-hero.jpg" alt="Golden Hour logo design — Art Deco-inspired identity for a modern European restaurant, by Aenea" />
+    </figure>
 
-    {/* Gallery - 4 boxes in one row */}
-    <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-4 mb-12">
-      <button data-lightbox class="overflow-hidden rounded-lg bg-gray-100 cursor-pointer border-none p-0 aspect-square">
-        <img src="/golden-hour-1.jpg" alt="Golden Hour - 1" class="w-full h-full object-cover hover:scale-105 transition-transform duration-300" />
-      </button>
-      
-      <button data-lightbox class="overflow-hidden rounded-lg bg-gray-100 cursor-pointer border-none p-0 aspect-square">
-        <img src="/golden-hour-2.jpg" alt="Golden Hour - 2" class="w-full h-full object-cover hover:scale-105 transition-transform duration-300" />
-      </button>
-      
-      <button data-lightbox class="overflow-hidden rounded-lg bg-gray-100 cursor-pointer border-none p-0 aspect-square">
-        <img src="/golden-hour-3.jpg" alt="Golden Hour - 3" class="w-full h-full object-cover hover:scale-105 transition-transform duration-300" />
-      </button>
-      
-      <button data-lightbox class="overflow-hidden rounded-lg bg-gray-100 cursor-pointer border-none p-0 aspect-square">
-        <img src="/golden-hour-4.jpg" alt="Golden Hour - 4" class="w-full h-full object-cover hover:scale-105 transition-transform duration-300" />
-      </button>
-    </div>
+    <section class="case wrap">
+      <div class="case-label"><span class="idx">01</span><span class="eyebrow">Overview</span></div>
+      <div class="case-body">
+        <p>The logo for Golden Hour draws from the refined geometry and quiet glamour of Art Deco — reinterpreted through a contemporary lens. Rather than nostalgia, the mark distils the movement&rsquo;s essence: symmetry, balance, and elegance, reshaped for a modern dining experience.</p>
+      </div>
+    </section>
 
-    {/* Copy Link */}
-    <div class="mb-12">
-      <button id="copy-link-btn" class="flex items-center gap-2 px-4 py-2 border border-gray-900 rounded-full text-sm hover:bg-gray-50 transition-colors cursor-pointer">
-        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13.828 10.172a4 4 0 00-5.656 0l-4 4a4 4 0 105.656 5.656l1.102-1.101m-.758-4.899a4 4 0 005.658 0l4-4a4 4 0 00-5.656-5.656l-1.1 1.1" />
-        </svg>
-        <span>Copy Link</span>
-      </button>
-    </div>
+    <section class="wrap">
+      <div class="pair">
+        <figure class="ph s7 r43" data-lightbox><img src="/golden-hour-1.jpg" alt="Golden Hour logotype — Art Deco-inspired restaurant logo by Aenea" /></figure>
+        <figure class="ph s5 r45" data-lightbox><img src="/golden-hour-2.jpg" alt="Golden Hour letterforms and typographic detail" /></figure>
+      </div>
+    </section>
 
-    {/* Description */}
-    <div>
-      <p class="text-sm md:text-base text-gray-700 mb-4 leading-relaxed">
-        The logo for Golden Hour draws from the refined geometry and quiet glamour of Art Deco - reinterpreted through a contemporary lens. Rather than nostalgia, the mark distils the movement's essence: symmetry, balance, and elegance reshaped for a modern dining experience.
-      </p>
-      
-      <p class="text-sm md:text-base text-gray-700 mb-4 leading-relaxed">
-        At its core, the identity reflects a distinctly European sensibility. References to Art Deco architecture and typography are present in the letterforms - where clean lines meet gentle curves, creating a rhythm that feels both classic and current.
-      </p>
-      
-      <p class="text-sm md:text-base text-gray-700 mb-4 leading-relaxed">
-        Each element is carefully considered. Proportion and detail speak instead of ornament. The result is a logo that feels composed and intentional - warm and sophisticated, never competing with the experience it belongs to.
-      </p>
-      
-      <p class="text-sm md:text-base text-gray-700 leading-relaxed">
-        Designed to live across menus, signage, and digital touchpoints, the identity adapts with ease. Much like the restaurant itself - atmosphere, detail, and design arriving at precisely the right moment.
-      </p>
-    </div>
-  </section>
+    <section class="case wrap">
+      <div class="case-label"><span class="idx">02</span><span class="eyebrow">The Identity</span></div>
+      <div class="case-body">
+        <p>At its core, the identity reflects a distinctly European sensibility. References to Art Deco architecture and typography live in the letterforms — where clean lines meet gentle curves, creating a rhythm that feels both classic and current.</p>
+        <p>Each element is carefully considered. Proportion and detail speak instead of ornament. The result is a logo that feels composed and intentional — warm and sophisticated, never competing with the experience it belongs to.</p>
+      </div>
+    </section>
+
+    <section class="wrap">
+      <div class="pair">
+        <figure class="ph s5 r45" data-lightbox><img src="/golden-hour-3.jpg" alt="Golden Hour identity across menus and signage" /></figure>
+        <figure class="ph s7 r43" data-lightbox><img src="/golden-hour-4.jpg" alt="Golden Hour logo applied across digital and print touchpoints" /></figure>
+      </div>
+    </section>
+
+    <section class="case wrap">
+      <div class="case-label"><span class="idx">03</span><span class="eyebrow">Outcome</span></div>
+      <div class="case-body">
+        <p>Designed to live across menus, signage, and digital touchpoints, the identity adapts with ease — much like the restaurant itself: atmosphere, detail, and design arriving at precisely the right moment.</p>
+      </div>
+    </section>
+
+    <section class="next wrap">
+      <a href="/work/ceramo" class="next-link">
+        <span class="next-k">Next project</span>
+        <span class="next-title">Ceramo <span class="arr" aria-hidden="true">↗</span></span>
+        <span class="next-cat">Logo Design</span>
+      </a>
+    </section>
+  </main>
 
   <Footer />
   <GalleryLightbox />
 </Layout>
-
-<script>
-  document.getElementById('copy-link-btn').addEventListener('click', () => {
-    navigator.clipboard.writeText(window.location.href);
-    const btn = document.getElementById('copy-link-btn');
-    const originalHTML = btn.innerHTML;
-    btn.innerHTML = '<svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41L9 16.17z"/></svg><span>Copied!</span>';
-    setTimeout(() => {
-      btn.innerHTML = originalHTML;
-    }, 2000);
-  });
-</script>

@@ -1,15 +1,20 @@
 ---
+const { title = "Aenea — Boutique Branding & UX/UI Design Studio · Norway", description = "Aenea is a boutique branding and UX/UI studio in Norway, building brand identities and websites for architecture studios, hotels, and design-led brands." } = Astro.props;
 import '../styles/global.css';
 ---
 <!doctype html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width" />
-    <link rel="icon" href="/logo.png" />
-    <title>Aenea</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="icon" href="/favicon.svg" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Schibsted+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet" />
+    <title>{title}</title>
+    <meta name="description" content={description} />
   </head>
-  <body class="bg-white text-gray-900">
+  <body>
     <slot />
   </body>
 </html>
